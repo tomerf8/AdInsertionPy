@@ -105,6 +105,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # CORS support
+    'corsheaders.middleware.CorsMiddleware',
 )
 
 ROOT_URLCONF = 'serverV2.urls'
@@ -130,9 +132,11 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'myapp',
     # Uncomment the next line to enable the admin:
-     'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
-     'django.contrib.admindocs',
+    'django.contrib.admindocs',
+    # CORS Support
+    'corsheaders',
 )
 
 
@@ -165,3 +169,6 @@ LOGGING = {
         },
     }
 }
+
+# CORs support
+CORS_ORIGIN_ALLOW_ALL = True
