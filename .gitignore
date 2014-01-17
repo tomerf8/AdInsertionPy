@@ -12,3 +12,4 @@ log
 parts
 tmp
 .DS_Store
+/sqlite.db
