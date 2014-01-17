@@ -1,0 +1,78 @@
+{% load static %}
+{% get_static_prefix as STATIC_PREFIX %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />	
+<meta name="description" content="" />
+<link href="{{ STATIC_PREFIX }}html/default.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body>
+<!-- Meanu Header -->
+<div id="header" class="container">
+	<div id="logo">
+		<h1><a href="#">...</a></h1>
+	</div>
+	<div id="menu">
+		<ul>
+			<li class="current_page_item"><a href="index.html" accesskey="1" title="">Homepage</a></li>
+			<li><a href="download.html" accesskey="2" title="">Download</a></li>
+			<li><a href="upload.html" accesskey="3" title="">Upload</a></li>
+			<li><a href="settings.html" accesskey="4" title="">Settings</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- Welcome Header -->
+<div id="welcome" class="wrapper-style1">
+	<p>
+		This is <strong>DASH Ad Server</strong>, 
+		a free, fully standards-compliant DASH streaming server		
+	</p>
+
+	<div id="portfolio" class="wrapper-style1">
+	<div id="column1">
+		<p><a href="#" class="image image-full"><img src="{{ STATIC_PREFIX }}html/images/cse.png" alt="" /></a></p>
+		<p>Department of Communication Systems Engineering</p>
+	</div>
+	<div id="column2">
+		<p><a href="#" class="image image-full"><img src="{{ STATIC_PREFIX }}html/images/bgu.png" alt="" /></a></p>
+		<p>Ben-Gurion University</p>
+	</div>
+	<div id="column3">
+		<p><a href="#" class="image image-full"><img src="{{ STATIC_PREFIX }}html/images/dash.png" alt="" /></a></p>
+		<p>DASH</p>
+	</div>
+	<div id="column4">
+		<p><a href="#" class="image image-full"><img src="{{ STATIC_PREFIX }}html/images/django.png" alt="" /></a></p>
+		<p>Django</p>
+	</div>
+</div>
+</div>
+<!-- Page -->
+<div id="page">
+	<div id="content"></div>
+	<div id="sidebar"></div>
+</div>
+<!-- Footer -->
+<div id="footer" class="container">
+	<div>
+		<div class="title">
+			<h2>Get in touch</h2>
+		<ul class="contact">
+			<li><a href="#" class="icon icon-twitter"><span>Twitter</span></a></li>
+			<li><a href="#" class="icon icon-facebook"><span></span></a></li>
+			<li><a href="#" class="icon icon-dribbble"><span>Pinterest</span></a></li>
+			<li><a href="#" class="icon icon-tumblr"><span>Google+</span></a></li>
+			<li><a href="#" class="icon icon-rss"><span>Pinterest</span></a></li>
+		</ul>
+	</div>
+	<p>&copy; 2013 Tomer Frid,Alex Vesker. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>.</p>
+</div>
+</body>
+</html>

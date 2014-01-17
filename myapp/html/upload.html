@@ -1,0 +1,85 @@
+{% load static %}
+{% get_static_prefix as STATIC_URL %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : UpRight 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20130526
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />	
+<meta name="description" content="" />
+<link href="{{ STATIC_URL }}html/default.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body>
+<div id="header" class="container">
+	<div id="logo">
+		<h1><a href="#">DASH Ad Server</a></h1>
+	</div>
+	<div id="menu">
+		<ul>
+			<li ><a href="index.html" accesskey="1" title="">Homepage</a></li>
+			<li><a href="download.html" accesskey="2" title="">Download</a></li>
+			<li class="current_page_item"><a href="upload.html" accesskey="3" title="">Upload</a></li>
+			<li ><a href="settings.html" accesskey="4" title="">Settings</a></li>
+		</ul>
+	</div>
+</div>
+<!-- Welcome Header -->
+<div id="welcome">
+</div>
+<!-- Page -->
+<div id="page">
+	<div id="content">
+		{% if uploadDone %}
+			<h1>File Uploaded Successfuly!</h1>
+		{% endif %}
+		<p>
+			<div class="login">
+				<h1>Enter Upload Details</h1>
+				<form action="/myapp/web/upload.html" method="post" enctype="multipart/form-data">{% csrf_token %}
+					<p><input type="text" name="user" 	value="" placeholder="Username or Email"></p>
+					<p><label>Select File:</label></p>
+					<p><input type="file" name="file" id="file" /></p>
+					
+					<p>Select Content</p>
+					<p><select name="content">
+						<option value="random">Random</option>				
+						<option value="sport">Sport</option>			
+						<option value="food">Food</option>	
+						<option value="cars">Cars</option>	
+					</select></p>
+					
+					<p class="remember_me">
+					  <label>
+						<input type="checkbox" name="is_ad" id="is_ad">
+						Check if upload is an Ad
+					  </label>
+					</p>
+        
+					<p class="submit">
+						<input type="submit" name="submit" value="Upload" />
+					</p>
+				</form>
+			</div>
+		</p>
+	</div>
+	<div id="sidebar"></div>
+</div>
+<!-- Footer -->
+<div id="footer" class="container">
+	<p>&copy; 2013 Tomer Frid,Alex Vesker. </p>
+</div>
+</body>
+</html>

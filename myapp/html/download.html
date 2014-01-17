@@ -1,0 +1,82 @@
+{% load static %}
+{% get_static_prefix as STATIC_PREFIX %}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />	
+<meta name="description" content="" />
+<link href="{{ STATIC_PREFIX }}html/default.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body>
+<div id="header" class="container">
+	<div id="logo">
+		<h1><a href="#">DASH Ad Server</a></h1>
+	</div>
+	<div id="menu">
+		<ul>
+			<li ><a href="index.html" accesskey="1" title="">Homepage</a></li>
+			<li class="current_page_item"><a href="download.html" accesskey="2" title="">Download</a></li>
+			<li><a href="upload.html" accesskey="3" title="">Upload</a></li>
+			<li><a href="settings.html" accesskey="4" title="">Settings</a></li>
+		</ul>
+	</div>
+</div>
+<!-- Welcome Header -->
+<div id="welcome" >
+</div>
+<!-- Page -->
+<div id="page">
+	<div id="content">
+		<p>
+			<div class="login">
+				<h1>Enter Request Details</h1>
+				<form action="/myapp/download_mpd/" method="get">
+					<p><input type="text" name="user" 	value="" placeholder="Username or Email"></p>
+
+					<p>Select Movie</p>
+					<p>
+						{% if movie_list %}
+						
+						<select name="movie">
+							{% for x in movie_list %}					
+								<option value={{x.name}}>{{x.name}}</option>
+							{% endfor %}
+						</select>
+						{% else %}
+						<p>No Movies are available.</p>
+						{% endif %}
+					</p>
+					<p>Select Ratio</p>
+					<p><select name="ratio">
+						<option value="0.1">0.1</option>
+						<option value="0.2">0.2</option>				
+						<option value="0.3">0.3</option>
+						<option value="0.4">0.4</option>
+						<option value="0.5">0.5</option>				
+					</select></p>
+					<p>Select Ad Content</p>
+					<p><select name="pref_content">
+						<option value="random">Random</option>				
+						<option value="sport">Sport</option>			
+					</select></p>
+					
+	
+					<p class="submit"><input type="submit" name="commit" value="Download"></p>
+				</form>
+			</div>
+		</p>
+	</div>
+	<div id="sidebar"></div>
+</div>
+<!-- Footer -->
+<div id="footer" class="container">
+	<p>&copy; 2013 Tomer Frid,Alex Vesker. </p>
+</div>
+</body>
+</html>
